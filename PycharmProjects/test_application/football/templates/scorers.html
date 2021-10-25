@@ -1,0 +1,155 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="container">
+  <div class="row">
+    <div class="col scorers-table">
+  <h3>Premier League</h3>
+<table class="table table-sm ">
+    <thead>
+      <tr>
+        <th scope='col'>Position</th>
+        <th scope='col'>Name</th>
+        <th class='fix' scope='col'>Team</th>
+        <th scope='col'>Goals</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data.pl_scorers%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            {% for j,k in i.items%}
+            {% if j in 'player'%}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% if j in 'team' %}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{i.numberOfGoals}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+<div class="col scorers-table">
+  <h3>Bundesliga League</h3>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope='col'>Position</th>
+        <th scope='col'>Name</th>
+        <th  scope='col'>Team</th>
+        <th  scope='col'>Goals</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data.bl_scorers%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            {% for j,k in i.items%}
+            {% if j in 'player'%}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% if j in 'team' %}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{i.numberOfGoals}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col scorers-table">
+  <h3>Serie A</h3>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope='col'>Position</th>
+        <th scope='col'>Name</th>
+        <th scope='col'>Team</th>
+        <th scope='col'>Goals</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data.sa_scorers%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            {% for j,k in i.items%}
+            {% if j in 'player'%}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% if j in 'team' %}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{i.numberOfGoals}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+<div class="col scorers-table">
+  <h3>La Liga</h3>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope='col'>Position</th>
+        <th scope='col'>Name</th>
+        <th scope='col'>Team</th>
+        <th scope='col'>Goals</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data.pd_scorers%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            {% for j,k in i.items%}
+            {% if j in 'player'%}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% if j in 'team' %}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{i.numberOfGoals}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col scorers-table">
+  <h3>Ligue 1</h3>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope='col'>Position</th>
+        <th scope='col'>Name</th>
+        <th scope='col'>Team</th>
+        <th scope='col'>Goals</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data.fl1_scorers%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            {% for j,k in i.items%}
+            {% if j in 'player'%}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% if j in 'team' %}
+            <td>{{k.name}}</td>
+            {% endif %}
+            {% endfor %}
+            <td>{{i.numberOfGoals}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+</div>
+{%endblock%}

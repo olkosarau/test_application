@@ -1,0 +1,168 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-sm league-table">
+  
+    <h3>{{data.r_pl_json.competition.name}}</h3>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Points</th>
+        <th scope="col">Form</th> </th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+        <th scope="col">GD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in data.r_pl_standings  %}
+        <th scope="row">{{item.position}}</th>
+        <td><span><img class='flag' src="{{item.team.crestUrl}}" alt= f"{{item.team.name}}Crest"></span>{{item.team.name}} </td>
+        <td>{{item.points}}</td>
+        <td>{{item.form}}</td>
+        <td>{{item.goalsFor}}</td>
+        <td>{{item.goalsAgainst}}</td>
+        <td>{{item.goalDifference}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+
+
+
+  <div class="col-sm league-table">
+  <h3>{{data.r_fl1_json.competition.name}}</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Points</th>
+        <th scope="col">Form</th> </th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+        <th scope="col">GD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in data.r_fl1_standings  %}
+        <th scope="row">{{item.position}}</th>
+        <td><span><img class='flag' src="{{item.team.crestUrl}}" alt= f"{{item.team.name}}Crest"></span>{{item.team.name}} </td>
+        <td>{{item.points}}</td>
+        <td>{{item.form}}</td>
+        <td>{{item.goalsFor}}</td>
+        <td>{{item.goalsAgainst}}</td>
+        <td>{{item.goalDifference}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+<div class="col-sm league-table">
+  <h3>{{data.r_sa_json.competition.name}}</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Points</th>
+        <th scope="col">Form</th> </th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+        <th scope="col">GD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in data.r_sa_standings  %}
+        <th scope="row">{{item.position}}</th>
+        <td><span><img class='flag' src="{{item.team.crestUrl}}" alt= f"{{item.team.name}}Crest"></span>{{item.team.name}} </td>
+        <td>{{item.points}}</td>
+        <td>{{item.form}}</td>
+        <td>{{item.goalsFor}}</td>
+        <td>{{item.goalsAgainst}}</td>
+        <td>{{item.goalDifference}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="col-sm league-table">
+  <h3>{{data.r_pd_json.competition.name}}</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Points</th>
+        <th scope="col">Form</th> </th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+        <th scope="col">GD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in data.r_pd_standings  %}
+        <th scope="row">{{item.position}}</th>
+        <td><span><img class='flag' src="{{item.team.crestUrl}}" alt= f"{{item.team.name}}Crest"></span>{{item.team.name}} </td>
+        <td>{{item.points}}</td>
+        <td>{{item.form}}</td>
+        <td>{{item.goalsFor}}</td>
+        <td>{{item.goalsAgainst}}</td>
+        <td>{{item.goalDifference}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="col-sm league-table">
+  <h3>{{data.r_bl1_json.competition.name}}</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Points</th>
+        <th scope="col">Form</th> </th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+        <th scope="col">GD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in data.r_bl1_standings  %}
+        <th scope="row">{{item.position}}</th>
+        <td><span><img class='flag' src="{{item.team.crestUrl}}" alt= f"{{item.team.name}}Crest"></span>{{item.team.name}} </td>
+        <td>{{item.points}}</td>
+        <td>{{item.form}}</td>
+        <td>{{item.goalsFor}}</td>
+        <td>{{item.goalsAgainst}}</td>
+        <td>{{item.goalDifference}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+
+
+{%endblock%}

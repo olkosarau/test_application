@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth', include('rest_framework.urls')),
     path('reg/', include('user.urls')),
+    path('footballApi/',include('football.urls'))
 ]
+

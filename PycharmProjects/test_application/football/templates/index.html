@@ -1,0 +1,215 @@
+{%extends 'base.html'%}
+{% block content%}
+{#{% load template_extras %}#}
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Match Day</th>
+        <th scope="col">Fixture</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td> <h3>UEFA Champions League</h3></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'UEFA Champions League'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+      <tr>
+        <td> <h3>La Liga</h3></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'La Liga'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+
+      <tr>
+        <td>
+          <h3>Premier League</h3>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'Premier League'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+      <tr>
+        <td>
+          <h3>Serie A</h3>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'Serie A'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+
+      <tr>
+        <td>
+          <h3>Eredivisie</h3>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'Eredivisie'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+
+      <tr>
+        <td>
+          <h3>Ligue 1</h3>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for item in matches|dictsortreversed:"lastUpdated" %}
+      {% if item.competition.name in 'Ligue 1'%}
+      <tr>
+          <td>{{ item.UTC}} </td>
+        
+        {% if item.status in 'FINISHED' %}
+
+        <td><i class="fa fa-check"></i></td>
+        {% elif item.status in 'SCHEDULED'%}
+        <td><i class="fa fa-bell"></i></td>
+        {% else %}
+        <td><i class="fa fa-spinner"></i></td>
+        {% endif %}
+        <td>{{item.utcDate}}</td>
+{#        <td><span><img class="flag" src="{{item.competition.area.ensignUrl}}"></span> {{item.homeTeam.name}} : {{item.awayTeam.name}}</td>#}
+        {% if item.score.fullTime.homeTeam == None %}
+        <td>-- : --</td>
+        {% else %}
+        <td>{{item.score.fullTime.homeTeam}} : {{item.score.fullTime.awayTeam}}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {%endfor%}
+
+
+
+    </tbody>
+  </table>
+</div>
+{% endblock %}
